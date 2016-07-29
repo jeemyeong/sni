@@ -1,0 +1,40 @@
+function Cafe24_SDK_Config_Url(url)
+{
+	$.Cafe24_SDK_Config_Url(url);
+}
+
+function Cafe24_SDK_Config_Set(domain, appid)
+{
+	$.Cafe24_SDK_Config_Set(domain, appid);
+}
+
+function Cafe24_SDK_Config_Clear()
+{
+	$.Cafe24_SDK_Config_Clear();
+}
+
+function Cafe24_SDK_Upload(element, options) {
+    $.Cafe24_SDK.debug = false;
+    
+	$(element).Cafe24_SDK_Upload(options);
+};
+
+function Cafe24_SDK_Upload_Submit(element, options) {
+    $.Cafe24_SDK.debug = false;
+    
+    $(element).unbind('submit');
+    
+    $(element).submit(function() {
+    	$(this).unbind('submit');
+    	
+    	$(this).Cafe24_SDK_Upload(options);
+
+    	return false;
+    });	
+    
+    $(element).submit();
+};
+
+function Cafe24_SizeRefresh() {
+	$.Cafe24_SizeRefresh();
+}
